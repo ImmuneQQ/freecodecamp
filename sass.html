@@ -1,0 +1,70 @@
+<style type="text/sass">
+  $text-color: red; /* переменная */
+
+  .blog-post,
+  h2 {
+    color: $text-color;
+  }
+</style>
+
+<style type="text/sass">
+  /* вложенные стили */
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<style type="text/sass">
+  /* объединение стилей */
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+  }
+
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    @include border-radius(15px);
+  }
+</style>
+
+<style type="text/sass">
+  /*условия*/
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    } @else if $val == medium {
+      border: 3px solid black;
+    } @else if $val == heavy {
+      border: 6px solid black;
+    } @else {
+      border: none;
+    }
+  }
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<style type="text/sass">
+  /* цикл */
+  @for $j from 1 to 6 {
+    .text-#{$j} {
+      font-size: $j * 15;
+    }
+  }
+</style>

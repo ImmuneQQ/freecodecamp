@@ -1,0 +1,22 @@
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red"); /*css свойства*/
+    $("#target1").prop("disabled", true); /*аргументы элемента*/
+    $("#target4").remove(); /*удалить элемент*/
+    $("#target2").appendTo("#right-well"); /*перенести элемент*/
+    $("#target5")
+      .clone() /*клонировать элемент*/
+      .appendTo("#left-well");
+    $("#target1")
+      .parent() /*родитель элемента*/
+      .css("background-color", "red");
+    $("#right-well")
+      .children() /*ребенок элемента*/
+      .css("color", "orange");
+    $("#left-well")
+      .children()
+      .css("color", "green");
+    $(".target:nth-child(2)").addClass("animated bounce"); /*псевдоклассы*/
+    $(".target:even").addClass("animated shake");
+  });
+</script>
